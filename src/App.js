@@ -1,25 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from 'react';
 
-function App() {
+import { fetchData, getPieces } from './utils';
+import PieceCard from './PieceCard';
+
+const App = () => {
+  const [contador, setContador] = useState(0);
+  const [numbers, setNumbers] = useState([]);
+  const [pieces, setPieces] = useState(null);
+
+  const handleClick = () => {
+    setContador(contador + 1);
+  };
+
+  const updateTitle = (number) => {
+    document.title = `clicked: ${number}`;
+  };
+
+  useEffect(() => {
+    updateTitle(contador);
+  }, [contador]);
+
+  useEffect(() => {
+    fetchData().then(setNumbers);
+    getPieces().then(setPieces);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>{contador}</h1>
+      <button onClick={handleClick}>add</button>
+      {numbers.length ? (
+        numbers.map((number) => <h2 key={number}>{number}</h2>)
+      ) : (
+        <h2>cargando...</h2>
+      )}
+      <div className='pieces_container'>
+        {pieces &&
+          pieces.map((piece) => (
+            <PieceCard data={piece} key={piece.id} handleClick={handleClick} />
+          ))}
+      </div>
     </div>
   );
-}
+};
 
 export default App;
