@@ -23,4 +23,4 @@ Cambiar useEffect en respuesta al cambio del contador
 
 ## Deploy
 
-    [github pages](https://suckak.github.io/CDMX012-pill-useState-useEffect)
+   https://suckak.github.io/CDMX012-pill-useState-useEffect
