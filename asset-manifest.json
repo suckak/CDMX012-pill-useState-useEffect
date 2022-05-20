@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/CDMX012-pill-useState-useEffect/static/css/main.be25b848.css",
-    "main.js": "/CDMX012-pill-useState-useEffect/static/js/main.1f7b76ff.js",
-    "index.html": "/CDMX012-pill-useState-useEffect/index.html",
-    "main.be25b848.css.map": "/CDMX012-pill-useState-useEffect/static/css/main.be25b848.css.map",
-    "main.1f7b76ff.js.map": "/CDMX012-pill-useState-useEffect/static/js/main.1f7b76ff.js.map"
+    "main.css": "/CDMX012-pill-useState-useEffect/build/static/css/main.be25b848.css",
+    "main.js": "/CDMX012-pill-useState-useEffect/build/static/js/main.1f7b76ff.js",
+    "index.html": "/CDMX012-pill-useState-useEffect/build/index.html",
+    "main.be25b848.css.map": "/CDMX012-pill-useState-useEffect/build/static/css/main.be25b848.css.map",
+    "main.1f7b76ff.js.map": "/CDMX012-pill-useState-useEffect/build/static/js/main.1f7b76ff.js.map"
   },
   "entrypoints": [
     "static/css/main.be25b848.css",
