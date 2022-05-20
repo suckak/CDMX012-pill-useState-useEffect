@@ -20,3 +20,7 @@ Cambiar useEffect en respuesta al cambio del contador
 ## Para correr el proyecto:
 
      npm start
+
+## Deploy
+
+    [github pages](https://suckak.github.io/CDMX012-pill-useState-useEffect)
