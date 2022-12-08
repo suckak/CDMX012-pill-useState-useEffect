@@ -7,9 +7,17 @@ const App = () => {
   const [contador, setContador] = useState(0);
   const [numbers, setNumbers] = useState([]);
   const [pieces, setPieces] = useState(null);
+  const [titles, setTitles] = useState([]);
 
   const handleClick = () => {
     setContador(contador + 1);
+  };
+
+  const handlePieceClick = (title) => {
+    setContador(contador + 1);
+    if (!titles.includes(title)) {
+      setTitles([...titles, title]);
+    }
   };
 
   const updateTitle = (number) => {
@@ -34,10 +42,24 @@ const App = () => {
       ) : (
         <h2>cargando...</h2>
       )}
+      {titles.length > 0 && (
+        <>
+          <h3>Pieces Clicked</h3>
+          <ul>
+            {titles.map((title) => (
+              <li key={title}>{title}</li>
+            ))}
+          </ul>
+        </>
+      )}
       <div className='pieces_container'>
         {pieces &&
           pieces.map((piece) => (
-            <PieceCard data={piece} key={piece.id} handleClick={handleClick} />
+            <PieceCard
+              data={piece}
+              key={piece.id}
+              handleClick={handlePieceClick}
+            />
           ))}
       </div>
     </div>
